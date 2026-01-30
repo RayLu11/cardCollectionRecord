@@ -1,6 +1,6 @@
 
 import { X, Filter, ChevronDown, ChevronRight, Check } from 'lucide-react';
-import { Button } from './Button';
+
 import { useState } from 'react';
 
 export type FilterGroup = {
