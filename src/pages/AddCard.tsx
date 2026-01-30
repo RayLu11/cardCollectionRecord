@@ -4,7 +4,7 @@ import { supabase } from '../lib/supabase';
 import { useAuth } from '../context/AuthContext';
 import { Button } from '../components/Button';
 import { Input } from '../components/Input';
-import { Upload, X, Plus } from 'lucide-react';
+import { Upload, X, Plus, ArrowLeft } from 'lucide-react';
 
 const CONDITIONS = ['Mint', 'Near Mint', 'Excellent', 'Good', 'Light Played', 'Played', 'Poor', 'Ungraded'];
 const GRADING_COMPANIES = ['Raw', 'PSA', 'BGS', 'SGC', 'CGC', 'Other'];
@@ -135,7 +135,10 @@ export default function AddCard() {
     return (
         <div className="min-h-screen bg-background p-4 sm:p-6 lg:p-8">
             <div className="mx-auto max-w-3xl">
-                <div className="mb-8">
+                <div className="mb-8 relative flex items-center justify-center">
+                    <Button variant="ghost" className="absolute left-0 pl-0" onClick={() => navigate('/')}>
+                        <ArrowLeft className="h-4 w-4" />
+                    </Button>
                     <h1 className="text-2xl font-bold text-foreground">Add New Card</h1>
                 </div>
 

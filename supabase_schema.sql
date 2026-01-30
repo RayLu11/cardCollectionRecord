@@ -44,8 +44,8 @@ create policy "Users can delete their own cards." on cards
   for delete using (auth.uid() = user_id);
 
 -- Set up Storage
-insert into storage.buckets (id, name)
-  values ('card-images', 'card-images');
+insert into storage.buckets (id, name, public)
+  values ('card-images', 'card-images', true);
 
 create policy "Card images are publicly accessible." on storage.objects
   for select using (bucket_id = 'card-images');
